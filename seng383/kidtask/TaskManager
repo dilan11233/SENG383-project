@@ -1,0 +1,84 @@
+import kidtask.model.Task;
+import kidtask.model.TaskStatus;
+import kidtask.persistence.FileManager;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class TaskManager {
+    private final List<Task> tasks = new ArrayList<>();
+    private final Path tasksFile;
+    private final UserManager userManager;
+
+    public TaskManager(Path tasksFile, UserManager userManager) {
+        this.tasksFile = tasksFile;
+        this.userManager = userManager;
+    }
+
+    public void load() throws IOException {
+        tasks.clear();
+        tasks.addAll(FileManager.readTasks(tasksFile));
+    }
+
+    public void save() throws IOException {
+        FileManager.writeTasks(tasksFile, tasks);
+    }
+
+    public List<Task> getAllTasks() {
+        return new ArrayList<>(tasks);
+    }
+
+    public List<Task> getTasksForChild(int childId) {
+        return tasks.stream()
+                .filter(t -> t.getAssignedChildId() == childId)
+                .collect(Collectors.toList());
+    }
+
+    public List<Task> getTasksBetween(LocalDate from, LocalDate to) {
+        return tasks.stream()
+                .filter(t -> !t.getDueDate().isBefore(from) &&
+                             !t.getDueDate().isAfter(to))
+                .collect(Collectors.toList());
+    }
+
+    public void addTask(Task task) throws IOException {
+        tasks.add(task);
+        save();
+    }
+
+    public Task findById(int taskId) {
+        return tasks.stream()
+                .filter(t -> t.getTaskId() == taskId)
+                .findFirst()
+                .orElse(null);
+    }
+
+    public void markCompletedByChild(int taskId) throws IOException {
+        Task t = findById(taskId);
+        if (t != null && t.getStatus() == TaskStatus.PENDING) {
+            t.setStatus(TaskStatus.COMPLETED);
+            save();
+        }
+    }
+
+    public void approveTask(int taskId, int rating) throws IOException {
+        Task t = findById(taskId);
+        if (t == null) return;
+        if (t.getStatus() == TaskStatus.COMPLETED) {
+            t.setStatus(TaskStatus.APPROVED);
+            t.setRating(rating);
+            var child = userManager.findById(t.getAssignedChildId());
+            if (child != null) {
+                int newPoints = child.getPoints() + t.getPoints();
+                child.setPoints(newPoints);
+                userManager.recalculateLevel(child);
+                userManager.save();
+            }
+            save();
+        }
+    }
+}

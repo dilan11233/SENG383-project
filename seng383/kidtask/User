@@ -1,0 +1,33 @@
+
+
+public class User {
+    private final int id;
+    private String name;
+    private UserRole role;
+    private int points;
+    private int level;
+
+    public User(int id, String name, UserRole role, int points, int level) {
+        this.id = id;
+        this.name = name;
+        this.role = role;
+        this.points = points;
+        this.level = level;
+    }
+
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public UserRole getRole() { return role; }
+    public int getPoints() { return points; }
+    public int getLevel() { return level; }
+
+    public void setName(String name) { this.name = name; }
+    public void setRole(UserRole role) { this.role = role; }
+    public void setPoints(int points) { this.points = points; }
+    public void setLevel(int level) { this.level = level; }
+
+    @Override
+    public String toString() {
+        return name + " (" + role + ")";
+    }
+}

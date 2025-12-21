@@ -1,0 +1,72 @@
+
+
+import kidtask.model.User;
+import kidtask.model.Wish;
+import kidtask.model.WishStatus;
+import kidtask.persistence.FileManager;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class WishManager {
+    private final List<Wish> wishes = new ArrayList<>();
+    private final Path wishesFile;
+
+    public WishManager(Path wishesFile) {
+        this.wishesFile = wishesFile;
+    }
+
+    public void load() throws IOException {
+        wishes.clear();
+        wishes.addAll(FileManager.readWishes(wishesFile));
+    }
+
+    public void save() throws IOException {
+        FileManager.writeWishes(wishesFile, wishes);
+    }
+
+    public List<Wish> getWishesForChild(int childId) {
+        return wishes.stream()
+                .filter(w -> w.getChildId() == childId)
+                .collect(Collectors.toList());
+    }
+
+    public List<Wish> getVisibleWishesForChild(User child) {
+        return wishes.stream()
+                .filter(w -> w.getChildId() == child.getId())
+                .filter(w -> child.getLevel() >= w.getRequiredLevel())
+                .collect(Collectors.toList());
+    }
+
+    public void addWish(int wishId, String title, int requiredLevel, User child) throws IOException {
+        Wish w = new Wish(wishId, title, requiredLevel, WishStatus.PENDING, child.getId());
+        wishes.add(w);
+        save();
+    }
+
+    public Wish findById(int wishId) {
+        return wishes.stream()
+                .filter(w -> w.getWishId() == wishId)
+                .findFirst()
+                .orElse(null);
+    }
+
+    public void approveWish(int wishId) throws IOException {
+        Wish w = findById(wishId);
+        if (w != null && w.getStatus() == WishStatus.PENDING) {
+            w.setStatus(WishStatus.APPROVED);
+            save();
+        }
+    }
+
+    public void rejectWish(int wishId) throws IOException {
+        Wish w = findById(wishId);
+        if (w != null && w.getStatus() == WishStatus.PENDING) {
+            w.setStatus(WishStatus.REJECTED);
+            save();
+        }
+    }
+}

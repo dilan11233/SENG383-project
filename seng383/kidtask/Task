@@ -1,0 +1,43 @@
+
+import java.time.LocalDate;
+
+public class Task {
+    private final int taskId;
+    private String title;
+    private String description;
+    private LocalDate dueDate;
+    private int points;
+    private TaskStatus status;
+    private int assignedChildId;
+    private int rating;
+
+    public Task(int taskId, String title, String description,
+                LocalDate dueDate, int points,
+                TaskStatus status, int assignedChildId, int rating) {
+        this.taskId = taskId;
+        this.title = title;
+        this.description = description;
+        this.dueDate = dueDate;
+        this.points = points;
+        this.status = status;
+        this.assignedChildId = assignedChildId;
+        this.rating = rating;
+    }
+
+    public int getTaskId() { return taskId; }
+    public String getTitle() { return title; }
+    public String getDescription() { return description; }
+    public LocalDate getDueDate() { return dueDate; }
+    public int getPoints() { return points; }
+    public TaskStatus getStatus() { return status; }
+    public int getAssignedChildId() { return assignedChildId; }
+    public int getRating() { return rating; }
+
+    public void setTitle(String title) { this.title = title; }
+    public void setDescription(String description) { this.description = description; }
+    public void setDueDate(LocalDate dueDate) { this.dueDate = dueDate; }
+    public void setPoints(int points) { this.points = points; }
+    public void setStatus(TaskStatus status) { this.status = status; }
+    public void setAssignedChildId(int assignedChildId) { this.assignedChildId = assignedChildId; }
+    public void setRating(int rating) { this.rating = rating; }
+}

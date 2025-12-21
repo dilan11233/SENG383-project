@@ -1,0 +1,64 @@
+
+
+import kidtask.model.User;
+import kidtask.model.UserRole;
+import kidtask.persistence.FileManager;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class UserManager {
+    private final List<User> users = new ArrayList<>();
+    private final Path usersFile;
+    private final LevelService levelService;
+    private TaskManager taskManager;
+
+    public UserManager(Path usersFile, LevelService levelService) {
+        this.usersFile = usersFile;
+        this.levelService = levelService;
+    }
+
+    public void setTaskManager(TaskManager taskManager) {
+        this.taskManager = taskManager;
+    }
+
+    public void load() throws IOException {
+        users.clear();
+        users.addAll(FileManager.readUsers(usersFile));
+    }
+
+    public void save() throws IOException {
+        FileManager.writeUsers(usersFile, users);
+    }
+
+    public List<User> getAllUsers() {
+        return new ArrayList<>(users);
+    }
+
+    public List<User> getUsersByRole(UserRole role) {
+        return users.stream()
+                .filter(u -> u.getRole() == role)
+                .collect(Collectors.toList());
+    }
+
+    public List<User> getChildUsers() {
+        return getUsersByRole(UserRole.CHILD);
+    }
+
+    public User findById(int id) {
+        return users.stream()
+                .filter(u -> u.getId() == id)
+                .findFirst()
+                .orElse(null);
+    }
+
+    public void recalculateLevel(User child) {
+        if (taskManager == null) return;
+        var tasksForChild = taskManager.getTasksForChild(child.getId());
+        int newLevel = levelService.calculateLevel(child, tasksForChild);
+        child.setLevel(newLevel);
+    }
+}

@@ -1,0 +1,7 @@
+
+
+public enum TaskStatus {
+    PENDING,
+    COMPLETED,
+    APPROVED
+}

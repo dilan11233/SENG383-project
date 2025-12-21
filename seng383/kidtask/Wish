@@ -1,0 +1,29 @@
+
+
+public class Wish {
+    private final int wishId;
+    private String title;
+    private int requiredLevel;
+    private WishStatus status;
+    private int childId;
+
+    public Wish(int wishId, String title, int requiredLevel,
+                WishStatus status, int childId) {
+        this.wishId = wishId;
+        this.title = title;
+        this.requiredLevel = requiredLevel;
+        this.status = status;
+        this.childId = childId;
+    }
+
+    public int getWishId() { return wishId; }
+    public String getTitle() { return title; }
+    public int getRequiredLevel() { return requiredLevel; }
+    public WishStatus getStatus() { return status; }
+    public int getChildId() { return childId; }
+
+    public void setTitle(String title) { this.title = title; }
+    public void setRequiredLevel(int requiredLevel) { this.requiredLevel = requiredLevel; }
+    public void setStatus(WishStatus status) { this.status = status; }
+    public void setChildId(int childId) { this.childId = childId; }
+}

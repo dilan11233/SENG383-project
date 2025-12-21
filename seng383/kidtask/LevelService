@@ -1,0 +1,32 @@
+
+
+import kidtask.model.Task;
+import kidtask.model.TaskStatus;
+import kidtask.model.User;
+
+import java.util.List;
+
+public class LevelService {
+
+    public int calculateLevel(User user, List<Task> allTasksForChild) {
+        int totalPoints = 0;
+        int ratingSum = 0;
+        int ratingCount = 0;
+
+        for (Task t : allTasksForChild) {
+            if (t.getStatus() == TaskStatus.APPROVED) {
+                totalPoints += t.getPoints();
+                if (t.getRating() > 0) {
+                    ratingSum += t.getRating();
+                    ratingCount++;
+                }
+            }
+        }
+
+        double avgRating = ratingCount == 0 ? 3.0 : (double) ratingSum / ratingCount;
+
+        int levelFromPoints = totalPoints / 100;
+        int levelFromRating = (int) (avgRating / 2.0);
+        return 1 + levelFromPoints + levelFromRating;
+    }
+}
