@@ -1,0 +1,482 @@
+{
+  "courses": [
+    {
+      "code": "PHYS 131",
+      "name": "Physics I",
+      "instructor": "Service_Staff",
+      "theory_hours": 3,
+      "lab_hours": 2,
+      "year": 1,
+      "students": 80,
+      "type": "mandatory"
+    },
+    {
+      "code": "MATH 157",
+      "name": "Calculus for Engineering I",
+      "instructor": "Service_Staff",
+      "theory_hours": 4,
+      "lab_hours": 0,
+      "year": 1,
+      "students": 80,
+      "type": "mandatory"
+    },
+    {
+      "code": "ENG 121",
+      "name": "Academic English I",
+      "instructor": "Service_Staff",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 1,
+      "students": 80,
+      "type": "mandatory"
+    },
+    {
+      "code": "TURK 101",
+      "name": "Turkish I",
+      "instructor": "Service_Staff",
+      "theory_hours": 2,
+      "lab_hours": 0,
+      "year": 1,
+      "students": 80,
+      "type": "mandatory"
+    },
+    {
+      "code": "BIO 101",
+      "name": "Introduction to Biology",
+      "instructor": "Service_Staff",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 1,
+      "students": 80,
+      "type": "mandatory"
+    },
+    {
+      "code": "ESR 103",
+      "name": "Ethical Principles",
+      "instructor": "Service_Staff",
+      "theory_hours": 1,
+      "lab_hours": 0,
+      "year": 1,
+      "students": 80,
+      "type": "mandatory"
+    },
+    {
+      "code": "MATH 223",
+      "name": "Discrete Structures",
+      "instructor": "Service_Staff",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 2,
+      "students": 70,
+      "type": "mandatory"
+    },
+    {
+      "code": "HIST 201",
+      "name": "Principles of Ataturk I",
+      "instructor": "Service_Staff",
+      "theory_hours": 2,
+      "lab_hours": 0,
+      "year": 2,
+      "students": 70,
+      "type": "mandatory"
+    },
+    {
+      "code": "SENG 101",
+      "name": "Computer Programming I",
+      "instructor": "S.Esmelioglu",
+      "theory_hours": 3,
+      "lab_hours": 2,
+      "year": 1,
+      "students": 70,
+      "type": "mandatory"
+    },
+    {
+      "code": "SENG 102",
+      "name": "Computer Programming II",
+      "instructor": "S.Esmelioglu",
+      "theory_hours": 3,
+      "lab_hours": 2,
+      "year": 1,
+      "students": 70,
+      "type": "mandatory"
+    },
+    {
+      "code": "SENG 201",
+      "name": "Data Structures",
+      "instructor": "B.Celikkale",
+      "theory_hours": 3,
+      "lab_hours": 2,
+      "year": 2,
+      "students": 60,
+      "type": "mandatory"
+    },
+    {
+      "code": "SENG 203",
+      "name": "Discrete Structures",
+      "instructor": "Unknown.1",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 2,
+      "students": 60,
+      "type": "mandatory"
+    },
+    {
+      "code": "SENG 206",
+      "name": "Software Design",
+      "instructor": "S.K.Tunc",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 2,
+      "students": 65,
+      "type": "mandatory"
+    },
+    {
+      "code": "SENG 271",
+      "name": "Software Project I",
+      "instructor": "Unknown.2",
+      "theory_hours": 2,
+      "lab_hours": 0,
+      "year": 2,
+      "students": 50,
+      "type": "mandatory"
+    },
+    {
+      "code": "SENG 301",
+      "name": "Software Project Management",
+      "instructor": "S.K.Tunc",
+      "theory_hours": 2,
+      "lab_hours": 2,
+      "year": 3,
+      "students": 45,
+      "type": "mandatory"
+    },
+    {
+      "code": "SENG 303",
+      "name": "Software Testing for Quality Assurance",
+      "instructor": "S.Esmelioglu",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 3,
+      "students": 40,
+      "type": "mandatory"
+    },
+    {
+      "code": "SENG 315",
+      "name": "Concurrent Programming",
+      "instructor": "B.Avenoglu",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 3,
+      "students": 40,
+      "type": "mandatory"
+    },
+    {
+      "code": "SENG 383",
+      "name": "Software Project III",
+      "instructor": "B.Celikkale",
+      "theory_hours": 0,
+      "lab_hours": 2,
+      "year": 3,
+      "students": 40,
+      "type": "mandatory"
+    },
+    {
+      "code": "ELEC 301",
+      "name": "Technical Elective II",
+      "instructor": "Unknown.3",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 3,
+      "students": 40,
+      "type": "departmental_elective"
+    },
+    {
+      "code": "SENG 426",
+      "name": "Formal Methods in Software Development",
+      "instructor": "B.Celikkale",
+      "theory_hours": 4,
+      "lab_hours": 0,
+      "year": 4,
+      "students": 30,
+      "type": "mandatory"
+    },
+    {
+      "code": "SENG 429",
+      "name": "Enterprise Application Development Laboratory",
+      "instructor": "B.Avenoglu",
+      "theory_hours": 1,
+      "lab_hours": 2,
+      "year": 4,
+      "students": 35,
+      "type": "seng_elective"
+    },
+    {
+      "code": "SENG 445",
+      "name": "Computer Vision",
+      "instructor": "Unknown.4",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 4,
+      "students": 30,
+      "type": "seng_elective"
+    },
+    {
+      "code": "SENG 449",
+      "name": "Special Topics in Software Engineering",
+      "instructor": "N.Cagiltay",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 4,
+      "students": 30,
+      "type": "seng_elective"
+    },
+    {
+      "code": "SENG 465",
+      "name": "Artificial Intelligence in Game Programming",
+      "instructor": "B.Avenoglu",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 4,
+      "students": 40,
+      "type": "seng_elective"
+    },
+    {
+      "code": "SENG 474",
+      "name": "Human Computer Interaction",
+      "instructor": "S.K.Tunc",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 4,
+      "students": 65,
+      "type": "seng_elective"
+    },
+    {
+      "code": "SENG 491",
+      "name": "Graduation Project I",
+      "instructor": "S.Esmelioglu",
+      "theory_hours": 1,
+      "lab_hours": 4,
+      "year": 4,
+      "students": 36,
+      "type": "mandatory"
+    },
+    {
+      "code": "SENG 492",
+      "name": "Graduation Project II",
+      "instructor": "S.Esmelioglu",
+      "theory_hours": 1,
+      "lab_hours": 4,
+      "year": 4,
+      "students": 36,
+      "type": "mandatory"
+    },
+    {
+      "code": "ELEC 401",
+      "name": "Technical Elective IV",
+      "instructor": "Unknown.5",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 4,
+      "students": 40,
+      "type": "departmental_elective"
+    },
+    {
+      "code": "ELEC 402",
+      "name": "Technical Elective V",
+      "instructor": "Unknown.6",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 4,
+      "students": 40,
+      "type": "departmental_elective"
+    },
+    {
+      "code": "ELEC 403",
+      "name": "Technical Elective Lab I",
+      "instructor": "Unknown.7",
+      "theory_hours": 1,
+      "lab_hours": 2,
+      "year": 4,
+      "students": 40,
+      "type": "departmental_elective"
+    },
+    {
+      "code": "CENG 346",
+      "name": "Compiler Design",
+      "instructor": "H.Sever",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 4,
+      "students": 40,
+      "type": "ceng_elective"
+    },
+    {
+      "code": "CENG 435",
+      "name": "Introduction to Data Security and Cryptography",
+      "instructor": "A.Bostan",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 4,
+      "students": 40,
+      "type": "ceng_elective"
+    },
+    {
+      "code": "CENG 464",
+      "name": "Data Mining",
+      "instructor": "G.Tokdemir",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 4,
+      "students": 40,
+      "type": "ceng_elective"
+    },
+    {
+      "code": "CENG 485",
+      "name": "Introduction to Blockchain Technology",
+      "instructor": "A.Ates",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 4,
+      "students": 40,
+      "type": "ceng_elective"
+    },
+    {
+      "code": "CENG 493",
+      "name": "Introduction to Natural Language Processing",
+      "instructor": "S.Arslan",
+      "theory_hours": 3,
+      "lab_hours": 0,
+      "year": 4,
+      "students": 40,
+      "type": "ceng_elective"
+    }
+  ],
+  "instructors": [
+    {
+      "name": "Service_Staff",
+      "max_theory_daily": 8,
+      "unavailable_times": []
+    },
+    {
+      "name": "S.Esmelioglu",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "B.Celikkale",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "S.K.Tunc",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "B.Avenoglu",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "N.Cagiltay",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "H.Sever",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "A.Bostan",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "G.Tokdemir",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "A.Ates",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "S.Arslan",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "Unknown.1",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "Unknown.2",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "Unknown.3",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "Unknown.4",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "Unknown.5",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "Unknown.6",
+      "max_theory_daily": 4
+    },
+    {
+      "name": "Unknown.7",
+      "max_theory_daily": 4
+    }
+  ],
+  "rooms": [
+    {
+      "id": "L-101",
+      "type": "lab",
+      "capacity": 40
+    },
+    {
+      "id": "L-102",
+      "type": "lab",
+      "capacity": 40
+    },
+    {
+      "id": "L-103",
+      "type": "lab",
+      "capacity": 40
+    },
+    {
+      "id": "L-104",
+      "type": "lab",
+      "capacity": 40
+    },
+    {
+      "id": "L-205",
+      "type": "lab",
+      "capacity": 40
+    },
+    {
+      "id": "A-101",
+      "type": "classroom",
+      "capacity": 50
+    },
+    {
+      "id": "A-102",
+      "type": "classroom",
+      "capacity": 60
+    },
+    {
+      "id": "A-201",
+      "type": "classroom",
+      "capacity": 70
+    },
+    {
+      "id": "A-202",
+      "type": "classroom",
+      "capacity": 80
+    },
+    {
+      "id": "A-301",
+      "type": "classroom",
+      "capacity": 100
+    }
+
+  ]
+}
